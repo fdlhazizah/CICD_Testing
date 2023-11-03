@@ -27,4 +27,12 @@ public class Post {
     public void receiveHttpResponseCode201(){
         restAssuredThat(response -> response.statusCode(201));
     }
+
+    @Step("I send POST HTTP request with invalid format request body")
+    public void sendPostHttpRequestInvalid(){
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("job", "leader");
+
+        SerenityRest.given().header("Content-Type", "application/json").body(requestBody.toString()).post(setPostApiEndpoint());
+    }
 }

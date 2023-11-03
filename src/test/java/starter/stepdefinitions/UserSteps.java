@@ -52,6 +52,11 @@ public class UserSteps {
         post.receiveHttpResponseCode201();
     }
 
+    @When("I send POST HTTP request with invalid format request body")
+    public void sendPostHttpRequestInvalid(){
+        post.sendPostHttpRequestInvalid();
+    }
+
     @Given("I set PUT endpoints")
     public void setPutEndpoint(){
         put.setPutEndpoint();
@@ -60,7 +65,6 @@ public class UserSteps {
     @When("I send PUT HTTP request")
     public void sendPutHttpRequest(){
         put.sendPutHttpRequest();
-
     }
 
     @Given("I set DELETE endpoints")
