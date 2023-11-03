@@ -10,6 +10,11 @@ Feature: Data
     When I send POST HTTP request
     Then I receive valid HTTP response code 201
 
+  Scenario: POST - As admin I should be failed to create new user
+    Given I set POST endpoints
+    When I send POST HTTP request with invalid format request body
+    Then I receive valid HTTP response code 201
+
   Scenario: PUT - As admin I have to be able to update an user
     Given I set PUT endpoints
     When I send PUT HTTP request
